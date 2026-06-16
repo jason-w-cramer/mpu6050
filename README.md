@@ -1,4 +1,4 @@
-# mpu6050
+# MPU6050 Position Data Driver
 This is a driver I am writing to learn about the MPU6050 and about filters for getting position data. There will be 4 or 5 different methods using the mpu6050 to calculate the position of the sensor with varying amounts of complexity. The core of this driver is copied from leech001's driver.
 
 ## Method 1: Rotational Matricies
@@ -11,6 +11,7 @@ Pitch = atan2(-Ax/sqrt(Ay^2 + Az^2))
 
 Pros:
 - Doesn't drift over time
+  
 Cons:
 - Noisy
 - Prone to large errors when pitch is close to 90 degrees
@@ -23,6 +24,7 @@ Pros:
 - Fast angle calculation
 - Less error from accelerating and decelerating sensor
 - Accurate over short periods of time
+  
 Cons:
 - Has drift
 
