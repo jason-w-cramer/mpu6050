@@ -22,7 +22,13 @@ To fix the roll error when both Ay and Az are very close to 0 (pitch~=90), we ca
 
 Roll = atan2(Ay/Ax_sign * sqrt(Az^2+u*Ax^2))
 
-## Method 2: Gyroscope Integration
+Pros:
+- Fixes error around pitch = 90 degrees
+  
+Cons:
+- Same cons as method one (except errors around 90 degree pitch)
+
+## Method 3: Gyroscope Integration
 Given that gyroscopes return angular acceleration, it is easy to calculate angular position by taking the double integral of this data.
 
 Pros:
