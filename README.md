@@ -40,3 +40,5 @@ Pros:
 Cons:
 - Has drift
 
+## Method 4: Complementary Filter (Gyroscope + Accelerometer)
+
