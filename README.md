@@ -18,15 +18,16 @@ Cons:
 - Only accurate when sensor is stationary
 
 ## Method 2: Method 1 with Approximation
-To fix the roll error when both Ay and Az are very close to 0 (pitch~=90), we can add in an Ax term. This gives us a very good approximation of the angle while fixing the large errors when pitch is close to 90. The error graph for u=0.01 can be seen in the article linked in Method 1.
+To fix the roll error when both Ay and Az are very close to 0 (pitch~=90), we can add in an Ax term. This gives us a very good approximation of the angle while fixing the large errors when pitch is close to 90. The error graph for u=0.01 can be seen in the article linked in Method 1. In my own testing of this method I found it to be an unreliable approximation due to rapidly changing signs when Az was close to 0.
 
-Roll = atan2(Ay/Ax_sign * sqrt(Az^2+u*Ax^2))
+Roll = atan2(Ay/Az_sign * sqrt(Az^2+u*Ax^2))
 
 Pros:
-- Fixes error around pitch = 90 degrees
+- Fixes error around pitch = 90 degrees in theory
   
 Cons:
 - Same cons as method one (except errors around 90 degree pitch)
+- In my testing I found it to be just as if not even more unreliable due to the sign of Az flipping rapidly when Az was close to 0
 
 ## Method 3: Gyroscope Integration
 Given that gyroscopes return angular acceleration, it is easy to calculate angular position by taking the double integral of this data.
