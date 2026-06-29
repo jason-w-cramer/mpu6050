@@ -42,6 +42,7 @@ Cons:
 
 ## Method 4: Complementary Filter (Gyroscope + Accelerometer)
 Explained really well here: https://www.youtube.com/watch?v=whSw42XddsU
+Just a note about my implementation. Due to edge cases and a mismatch between how gyroscope and accelerometer angles are calculates, when roll is close to 180 or -180, or when pitch is close to 90 or -90, the calculations break. When using this calculation the sensor must be kept out of these ranges. 
 
 Pros:
 - Fast angle calculation
