@@ -41,4 +41,13 @@ Cons:
 - Has drift
 
 ## Method 4: Complementary Filter (Gyroscope + Accelerometer)
+Explained really well here: https://www.youtube.com/watch?v=whSw42XddsU
 
+Pros:
+- Fast angle calculation
+- Low noise
+- Accurate over long and short periods of time
+
+Cons: 
+- Harder to implement
+- Requires 2x ammount of sensors as previous method
